@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+       function changeBGCol(container){
+       document.getElementsByClassName("container")[0].style.backgroundColor = container.value;
+       console.log(container.value)
+    }
+       function changeFontCol(container){
+       document.getElementsByClassName("container")[0].style.color = container.value;
+       console.log(container.value)
+
+}
+    </script>
+
+</head>
+<body>
+    <label>
+        <input onchange="changeBGCol(this)" type="color">
+    </label> <br>
+
+    <label>
+        <input onchange="changeFontCol(this)" type="color" >
+    </label>
+    <div class="container"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde voluptas quae corrupti veniam commodi repudiandae illo adipisci hic aspernatur sed facilis maxime consectetur impedit debitis, quia, dolor incidunt minus cum.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic id laboriosam dolores temporibus voluptatibus beatae! Praesentium eligendi, nihil magnam sapiente illum adipisci porro quasi vero veniam, officiis ipsam, neque deleniti?
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis doloremque consequatur id quod corrupti commodi obcaecati, explicabo consequuntur facere quasi magnam, dignissimos earum molestias sequi omnis natus sint amet expedita!
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum perspiciatis porro sequi voluptatum temporibus vero optio consequuntur cupiditate voluptates fuga voluptatem, quasi a odio tenetur expedita, totam, quam laborum corporis.
+    </div>
+</body>
+</html>

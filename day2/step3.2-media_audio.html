@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media</title>
+</head>
+<body>
+    <h1>current time : <output id="op"></output></h1>
+    <vaudio width="550" height="400"  id="audi">
+        <source src="/////">
+       
+    </video>
+    <button onclick="playaudi()">Play</button>
+    <button onclick="pauseaudi()">Pause</button>
+   <button onclick="stopaudi()">Stop</button>
+   <button onclick="rewindaudi()">Rewind</button>
+    <script>
+        setInterval(function(){
+            document.getElementById("op").value = document.getElementById("audi").currentTime;
+            document.getElementById("volop").value = document.getElementById("audi").volume;
+        },10)
+        function playaudi(){
+          document.getElementById("audi").play();
+          document.getElementById("audi").volume="0.5";
+        }
+        function pauseaudi(){
+            document.getElementById("audi").pause();
+        }
+        function stopaudi(){
+            document.getElementById("audi").currentTime=0;
+            document.getElementById("audi").pause();
+        }
+        function rewindaudi(){
+            document.getElementById("audi").currentTime=document.getElementById("audi").currentTime-1;
+           
+        }
+    
+    </script>
+</body>
+</html>

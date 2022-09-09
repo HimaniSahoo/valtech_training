@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#" method="get">
+        <table>
+            <tbody>
+                <tr>
+                    <th>User Name</th>
+                    <td><input autofocus name="name" required  placeholder="Enter Full Name" type="text"/></td>
+                </tr>
+                <tr>
+                    <th> User Age</th>
+                    <td><input onchange="validateAge()" id="age" name="age" required min="18" max="60" step="1" type="number"></td>
+                </tr>
+                <tr>
+                    <th&nbsp;</th>
+                    <td><input type="submit" value="Register"/></td>
+                </tr>
+            </tbody>
+        </table>   
+        <script>
+            document.getElementById("age").setCustomValidity("Enter your age");
+            function validateAge(){
+                if(document.getElementById("age").value < 18){
+                    document.getElementById("age").setCustomValidity("You are too young to join."); 
+                }
+                else if(document.getElementById("age").value > 60){
+                    document.getElementById("age").setCustomValidity("You are too old to join.");
+                }
+                else{
+                    document.getElementById("age").setCustomValidity("");
+                }
+            }
+        </script>     
+</body>
+</html>

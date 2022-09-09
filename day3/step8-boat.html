@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boat</title>
+    <style>
+        canvas{
+          border: 2px solid black;
+          margin: auto;
+          display: block;
+        }
+      </style>
+</head>
+<body>
+    <canvas width="500" height="500" id="can"></canvas>
+    <script>
+        var ctx = document.getElementById("can").getContext("2d")
+        /*ctx.lineWidth = 10;
+        ctx.strokeStyle = "orange";
+        ctx.strokeRect(180,180,200,200)
+        ctx.fillRect(180,180,200,200)*/
+        ctx.beginPath();
+        ctx.strokeStyle = "black";
+        ctx.fillStyle = "crimson";
+        ctx.moveTo(200,200)//boat flag down
+        ctx.lineTo(100,200)// boat flag
+        ctx.lineTo(200,100)
+        ctx.lineTo(200,200)
+        ctx.lineTo(200,300) //boat pole
+        ctx.lineTo(20,300)
+        ctx.lineTo(350,300)
+        ctx.lineTo(300,400)
+        ctx.lineTo(70,400)
+        ctx.lineTo(20,300)
+        //ctx.fill();
+        ctx.stroke();
+
+    </script>
+</body>
+</html>

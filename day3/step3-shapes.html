@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shapes</title>
+    <style>
+        canvas{
+          border: 2px solid black;
+          margin: auto;
+          display: block;
+        }
+      </style>
+</head>
+<body>
+    <canvas width="500" height="500" id="can"></canvas>
+    <script>
+        var ctx = document.getElementById("can").getContext("2d")
+        /*ctx.lineWidth = 10;
+        ctx.strokeStyle = "orange";
+        ctx.strokeRect(180,180,200,200)
+        ctx.fillRect(180,180,200,200)*/
+        ctx.beginPath();
+        ctx.strokeStyle = "brown";
+        ctx.fillStyle = "crimson";
+        ctx.moveTo(100,100)
+        ctx.lineTo(200,100)
+        ctx.lineTo(200,200)
+        ctx.lineTo(100,200)
+        ctx.lineTo(100,100)
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.strokeStyle = "crimson";
+        ctx.fillStyle = "cyan";
+        ctx.moveTo(300,100)
+        ctx.lineTo(400,100)
+        ctx.lineTo(400,200)
+        ctx.lineTo(300,200)
+        ctx.lineTo(300,100)
+        ctx.fill();
+        ctx.stroke();
+    </script>
+</body>
+</html>
