@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation 2</title>
+    <style>
+        @keyframes valtech{
+            0%{
+                background-color: silver;
+                transform: rotate(0deg) scale(1,1);
+                border-radius: 0%;
+            }
+            20%{
+                background-color: goldenrod;
+                transform: rotate(45deg) scale(1.5,1.5);
+                border-radius: 10%;
+            }
+            40%{
+                background-color: aquamarine;
+                transform: rotate(90deg) scale(2,2);
+                border-radius: 20%;
+            }
+            60%{
+                background-color: lightsalmon;
+                transform: rotate(135deg) scale(2.5,2.5);
+                border-radius: 30%;
+            }
+            80%{
+                background-color: crimson;
+                transform: rotate(180deg) scale(3,3);
+                border-radius: 40%;
+            }
+            100%{
+                background-color: violet;
+                transform: rotate(0deg) scale(3.5,3.5);
+                border-radius: 100%;
+            }
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color:  rgb(144, 188, 247);
+            margin: 100px auto;
+            text-align: center;
+        }    
+        .box{
+            animation-name: valtech;
+            animation-duration: 6s;
+            animation-delay: 2s;
+            animation-iteration-count: infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        Himani Sahoo
+    </div>
+</body>
+</html>

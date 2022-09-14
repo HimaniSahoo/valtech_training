@@ -1,0 +1,18 @@
+section{
+    width: 1400kpx;
+    background-color: aquamarine;
+    margin: auto;
+    height: 600px;
+  }
+  article{
+    width: 100px;
+    height: 100px;
+    background-color: crimson;
+    float: left;
+    margin: 5px;
+  }
+  #photo{
+    background-image: url("images/wonderwoman.jpg");
+    width: 200px;
+    height: 200px;
+  }

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            width: 1000px;
+            height: 100px;
+            /* text-align: center; */
+            
+        }
+        h1{
+            text-align: center;
+        }
+        h3{
+            text-align: center;
+        }
+        span{
+            color: blue;
+        }
+        .abc{
+            color: blue;
+        }
+        .box1{
+            text-align: center;
+        }
+        .box2{
+            color: red;
+        }
+        p{
+            text-align: justify;
+        }
+        .box3{
+            text-align: justify;
+        }
+        .row{
+            border: 2px solid coral;
+        }
+        
+    </style>
+     <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+
+</head>
+<body>
+    <div class="container">
+        <h1><center>A list Apart</center></h1>
+        <img src="css-images/octopus.webp" alt="nature" width="1200px" height="300px">
+        <hr>
+       
+    </div> 
+        <h3>Design for unexpected</h3>
+        <h6><center>by <span><b>Cathy Duton</b></span> July 15,2021</center></h6>
+        <p class="box1">Published in <span class="abc"> Design, Responsive Design</span></p>
+        <br>
+        <p><center>Your company’s survival is tied to the ability of the products it makes to work in situations you haven’t imagined, and on devices that don’t yet exist.<br>
+           — Jeffrey Zeldman <br>
+            I’m not sure when I first heard this quote, but it’s something that has stayed with me over the years. How do you create services for situations you can’t imagine? Or design products that work on devices yet to be invented?</center></p>
+            
+        
+        <div class="row">
+            <div class="col-md-2">
+                <img src="css-images/default_f.jpg" alt="photo" width="300px" height="300px">
+            </div>
+            <div class="col-md-8">
+                <span class="box2"><b><center>Flash, Photoshop, and responsive design</center></b></span><br>
+                <p>When I first started designing websites, my go-to software was Photoshop. I created a 960px canvas and set about creating a layout that I would later drop content in. The development phase was about attaining pixel-perfect accuracy using fixed widths, fixed heights, and absolute positioning.
+                Ethan Marcotte’s talk at An Event Apart and subsequent article “Responsive Web Design” in A List Apart in 2010 changed all this. I was sold on responsive design as soon as I heard about it, but I was also terrified. The pixel-perfect designs full of magic numbers that I had previously prided myself on producing were no longer good enough.
+                The fear wasn’t helped by my first experience with responsive design. My first project was to take an existing fixed-width website and make it responsive. What I learned the hard way was that you can’t just add responsiveness at the end of a project. To create fluid layouts, you need to plan throughout the design phase.
+                </p>
+            </div>
+            <div class="col-md-2" style="float: right;">
+                <a href="https://sps.northwestern.edu/ala">
+                    <img class="a-logo" src="https://i0.wp.com/alistapart.com/wp-content/uploads/2020/09/IDS_700x200_Logo-copy.gif?w=960&ssl=1" alt="Northwestern Logo" width="214" height="61">
+                    <p>Designing responsive or fluid sites has always been about removing limitations, producing content that can be viewed on any device. It relies on the use of percentage-based layouts, which I initially achieved with native CSS and utility</p>
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <img src="css-images/superman.jpg" alt="pic" width="600px" height="300px">
+            </div>
+            <div class="col-md-4">
+                <p>Media queries prevented this by allowing us to add breakpoints where the design could adapt. Like most people, I started out with three breakpoints: one for desktop, one for tablets, and one for mobile. Over the years, I added more and more for phablets, wide screens, and so on. 
+
+                    For years, I happily worked this way and improved both my design and front-end skills in the process. The only problem I encountered was making changes to content, since with our Sass grid system in place, there was no way for the site owners to add content without amending the markup—something a small business owner might struggle with. This is because each row in the grid was defined using a div as a container. Adding content meant creating new row markup, which requires a level of HTML knowledge.
+                    
+                    Row markup was a staple of early responsive design, present in all the widely used frameworks like Bootstrap and Skeleton.</p>>
+            </div>
+            <div class="col-md-4">
+                <img src="css-images/supergirl.jpg" alt="pic" width="600px" height="300px">  
+            </div>
+        </div>
+        <div class="row">
+            <div class="the col-md-3">
+                <p>One of the biggest arguments in favor of container queries is that they help us create components or design patterns that are truly reusable because they can be picked up and placed anywhere in a layout. This is an important step in moving toward a form of component-based design that works at any size on any device.</p>
+        
+             </div>
+            <div class="the col-md-6">
+                <p>One of the biggest arguments in favor of container queries is that they help us create components or design patterns that are truly reusable because they can be picked up and placed anywhere in a layout. This is an important step in moving toward a form of component-based design that works at any size on any device.</p>
+            </div>
+            <div class="the col-md-3"><p>One of the biggest arguments in favor of container queries is that they help us create components or design patterns that are truly reusable because they can be picked up and placed anywhere in a layout. This is an important step in moving toward a form of component-based design that works at any size on any device.</p></div>
+            
+        
+        </div>
+    </div>    
+</body>
+</html>

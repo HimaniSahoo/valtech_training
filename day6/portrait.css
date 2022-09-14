@@ -1,0 +1,16 @@
+section{
+    width: 1400kpx;
+    background-color: rgb(71, 20, 27);
+    margin: auto;
+    height: 600px;
+  }
+  article{
+    width: 100px;
+    height: 100px;
+    background-color: rgb(120, 236, 155);
+    float: left;
+    margin: 5px;
+  }
+  #photo{
+    background-image: url("images/wonderwoman.jpg");
+  }
