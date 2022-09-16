@@ -1,0 +1,2 @@
+Problem Statement: Build a container consisting of many boxes in diffent rows using the display flex layout.
+I was assigned to make the layout-4 using the flex box layout. I learnt to divide the page into different rows. First I made a container and then added sections. And under each section I added the divisions. The display flex helped to display items in the row. This assignment gave me the clear picture of how to implement display flex and other stylings.
