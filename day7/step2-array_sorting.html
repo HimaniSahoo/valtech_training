@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // var favNum = [12,2,4,8,9,13,6,7,16,11,17,22,1];
+        var favNum = [
+            {name : "Archies ", favNume:12 },
+            {name : "Anmol ", favNume: 2},
+            {name : "Sharan", favNume: 4},
+            {name : "Sneha ", favNume: 8},
+            {name : "Harshitha", favNume: 9},
+            {name : "Moulidhar", favNume: 13},
+            {name : "Jai Kumar", favNume: 6},
+            {name : "Pavan", favNume: 5},
+            {name : "Wasil", favNume: 7},
+            {name : "Saniya", favNume: 16},
+            {name : "Himani", favNume: 11},
+            {name : "Anirudh", favNume: 17},
+            {name : "Mihir", favNume: 22},
+            {name : "Vijay", favNume: 1}
+        ];
+        // function sortItOut(val1,val2){
+        //     if(val1 > val2){
+        //         return 1;
+        //     }else if(val1 < val2){
+        //         return -1;
+        //     }
+        //     else{
+        //         return 0;
+        //     }
+        // }
+        // function favNumsort(favNume1,favNume2) {
+        // if (favNume1 > favNume2) {
+        //     return 1;
+        // }
+        // if (favNume1 < FavNume2) {
+        //     return -1;
+        // }
+        // if (favNume1 === favNume2) {
+        //     if (name1 < name2) {
+        //     return 1;
+        //     } else {
+        //     return -1;
+        //     }
+        // }
+        // };   
+        function sortItOut(var1,var2){
+            if(var1.favNume > var2.favNume){
+                return 1;
+            }
+            else if(var1.favNume < var2.favNume){
+                return -1;
+            }
+            else{
+                return 0;
+            }
+        }
+        function sortFun(){
+            var result = favNum.sort(sortItOut);
+            console.log(result);
+            for(var i=0; i<result.length;i++){
+            document.getElementById("log").innerHTML+= "<li>" +result[i].name+"'s' favourite number is" +result[i].favNume+ "</li>";
+            }
+        }
+        
+    </script>
+</head>
+<body>
+    <button onclick="sortFun()">Sort Array</button>
+    <h1>Output: <output id="log"></output></h1>
+</body>
+</html>

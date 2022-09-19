@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var win = null;
+        function demo() {
+            var win = window.open("https://www.google.com","winName","status,height=400,width=300");
+        }
+        function promptName() {
+            per = prompt("Please enter your name", "Himani Sahoo");
+            if (per != null) {
+            document.getElementById("demo").innerHTML = "Hello " + per + "! Welcome to Valtech_";
+            }
+        }
+        function changeWindow(){
+            win.location = "http://tooncrush.com";
+        }
+        function closeWin() {
+           win.close();
+        }
+    </script>
+    
+</head>
+<body>
+    <button onclick="demo()">open</button>  
+    <button onclick="changeWindow()">Change</button>  
+    <button onclick="closeWin()">close</button>  
+    <button onclick="promptName()">prompt</button>  
+    <p id="demo"></p>
+</body>
+</body>
+</html>

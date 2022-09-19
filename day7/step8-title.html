@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DOM title Property</title>
+        <style>
+            h1 {
+                color:rgb(176, 158, 241);
+            }
+            body {
+                text-align:center;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Valtech</h1>
+        <h2>DOM title Property</h2>
+        <button onclick="abc()">Submit</button>
+        <p id="box"></p>
+ 
+ 
+        <script>
+        function abc() {
+            var x = document.title;
+            document.getElementById("box").innerHTML = x;
+            console.log(document.links)
+        }
+        </script>
+        <a href="http://www.google.com" > Google</a>
+    </body>
+</html>                   
