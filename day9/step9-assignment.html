@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        .container{
+            width: 600px;
+            height: 550px;
+            background-color: rgb(209, 138, 51);
+            margin: 100px auto;
+            overflow: auto;
+        }
+        
+        .container div{
+            margin: 10px;
+            height: 100px;
+            width: 100px;
+            background-color: rgb(67, 151, 207);
+            float: left;
+        }
+        .container div div{
+            margin: 40px;
+            height: 40px;
+            width: 10px;
+            background-color: rgb(209, 79, 28);
+            float: left;
+        }
+
+        div button{
+            height: 15px;
+            width: 15px;
+            margin: 10px;
+            float: right;
+            cursor: pointer;
+        }
+    </style>
+
+
+    <script>
+        var container = null;
+        var ni = null;
+        var count = 1;
+
+
+        function removeSelectedBox(evt){
+            if(evt.target.tagName === 'BUTTON'){
+                document.getElementsByTagName("div")[0].removeChild(evt.target.parentNode)
+            }
+        }
+
+        function init(){
+            document.getElementsByTagName("div")[0].addEventListener('click',removeSelectedBox)
+            ni = setInterval(function(){
+                var box = document.createElement("div")
+                var box1 = document.createElement("button")
+                document.getElementsByClassName("container")[0].appendChild(box)
+                document.getElementsByTagName("div")[count].appendChild(box1)
+                count++;
+
+                if(count > 25){
+                    clearInterval(ri)
+                }
+            },60)
+        }
+
+        document.addEventListener("DOMContentLoaded",init);
+    </script>
+</head>
+<body>
+    <div class="container"></div>
+</body>
+</html>
