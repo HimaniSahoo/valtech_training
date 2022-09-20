@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //function declaration
+        /*function adder(num1, num2){
+            return num1 + num2;
+        };
+        console.log(adder(5,6));
+        */
+        //function exoression
+        // here it is hoisted
+        //we can apply arrow function to expression function only
+        /*var adder = function(num1, num2){
+            return num1 + num2;
+        };
+        console.log(adder(5,6));
+        */
+
+       /*var adder =(num1, num2)=>{
+            return num1 + num2;
+        };
+
+        console.log(adder(5,6));
+        */
+
+        //var adder =(num1, num2)=>num1 + num2;
+        //console.log(adder(5,7));
+
+
+        var adder = num1 => num1 + num1;
+        console.log(adder(5));
+        // bracket must be used when there is more than one sentence. 
+        //curly bracket can be avoided if there is one argument but needs to be added if there is no argument or more than one argument.
+
+
+    </script>
+</body>
+</html>
