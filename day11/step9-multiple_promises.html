@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Promises</title>
+    <script>
+        var  firstPromise = function(){
+            return new Promise(function(resolve, reject){
+                setTimeout(function(){
+                    if(true){
+                        resolve("Resolve Message from first Promise")
+                    }else{
+                        reject("Reject error from first Promise")
+                    }
+                },4000)
+            })
+        }
+
+        var  secondPromise = function(){
+            return new Promise(function(resolve, reject){
+                setTimeout(function(){
+                    if(true){
+                        resolve("Resolve Message from second Promise")
+                    }else{
+                        reject("Reject error from second Promise")
+                    }
+                },2000)
+            })
+        }
+
+        var  thirdPromise = function(){
+            return new Promise(function(resolve, reject){
+                setTimeout(function(){
+                    if(true){
+                        resolve("Resolve Message from third Promise")
+                    }else{
+                        reject("Reject error from third Promise")
+                    }
+                },3000)
+            })
+        }
+
+        /*
+        Promise.all([firstPromise(), secondPromise(), thirdPromise()])
+        .then(function(res){
+            console.log(res)
+        })
+        .catch(function(err){
+            console.log(err)
+        })
+        .finally(function(){
+            console.log("All Promise Completed")
+        })
+        */
+
+        
+        Promise.any([firstPromise(), secondPromise(), thirdPromise()]) // any accept only the success
+        .then(function(res){
+            console.log(res)
+        })
+        .catch(function(err){
+            console.log(err)
+        })
+        .finally(function(){
+            console.log("All Promise Completed")
+        })
+        
+
+        /*
+        Promise.race([firstPromise(), secondPromise(), thirdPromise()]) // race accepts both success and failure depending upon the time i.e which is fast will be taken by the race
+        .then(function(res){
+            console.log(res)
+        })
+        .catch(function(err){
+            console.log(err)
+        })
+        .finally(function(){
+            console.log("All Promise Completed")
+        })
+        */
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

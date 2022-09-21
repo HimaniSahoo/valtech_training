@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nested Promise</title>
+    <script>
+        /*var  firstPromise = function(){
+            return new Promise(function(resolve, reject){
+                setTimeout(function(){
+                    if(true){
+                        var secondPromise = ()=>{
+                            return new Promise(function(resolve, reject){
+                                setInterval(function(){
+                                    if(true){
+                                        resolve("Resolve Message from second Promise")
+                                    }
+                                    else{
+                                        reject("Reject error from second Promise")
+                                    }
+                                },1000)
+                            })
+                        }
+                    }else{
+                        reject("Reject error from first Promise")
+                    }
+                },2000)
+            })
+        }
+        */
+        var  firstPromise = function(){
+            return new Promise(function(resolve, reject){
+                setTimeout(function(){
+                    if(true){
+                        resolve((console.log("Outer first promise"), secondPromise()))
+                    }else{
+                        reject("Reject error from first Promise")
+                    }
+                },4000)
+            })
+        }
+
+        var  secondPromise = function(){
+            return new Promise(function(resolve, reject){
+                setTimeout(function(){
+                    if(true){
+                        resolve("Resolve Message from second Promise")
+                    }else{
+                        reject("Reject error from second Promise")
+                    }
+                },2000)
+            })
+        }
+       
+        Promise.any([firstPromise()])
+        .then(function(res){
+            console.log(res)
+        })
+        .catch(function(err){
+            console.log(err)
+        })
+        // .finally(function(){
+        //     console.log("All Promise Completed")
+        // })
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment</title>
+    <script>
+        var avengers = ["Ironman", "Hulk", "Dr Strange", "Thor"];
+
+       function *myAvn(list){
+            for(let hero of list){
+                yield hero
+            }
+        };
+
+        let avglist = myAvn(avengers);
+
+        // console.log(avglist.next().value);
+        // console.log(avglist.next().value);
+        // console.log(avglist.next().value);
+        // console.log(avglist.next().value);
+        // console.log(avglist.next().value);
+        // console.log(avglist.next().value);
+        
+
+        var si = setInterval(function(){
+            let selectedHero = avglist.next();
+            if(selectedHero.done){
+                clearInterval(si);
+            }else{
+                console.log(selectedHero.value);
+            }
+        },1000)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

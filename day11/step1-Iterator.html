@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iterator</title>
+    <script>
+        var favNums = [1,3,7,4,6,9,6,5];
+        /*var itr = favNums[Symbol.iterator]();
+        // var itr = favNums.values();
+        console.log(itr.next());
+        console.log("--------------------------");
+        console.log(itr.next());
+        console.log("--------------------------");
+        console.log(itr.next());
+        console.log("--------------------------");
+        console.log(itr.next());
+        console.log("--------------------------");
+        console.log(itr.next());
+        console.log("--------------------------");
+        console.log(itr.next());
+        console.log("--------------------------");
+        console.log(itr.next());
+        console.log("--------------------------");
+        console.log(itr.next());
+        console.log("--------------------------");
+        console.log(itr.next());
+        */
+
+        //dynamic array
+        setInterval(function(){
+            favNums.push(Math.round(Math.random() * 20));
+            document.getElementById("log").innerText = favNums.join();
+        },2000);
+
+        var itr = favNums.values();
+        function callGetValsFun(){
+            /*(favNums.forEach(function(val){
+                console.log(val);
+            });
+            */
+           console.log(itr.next().value);
+         }
+    </script>
+</head>
+<body>
+    <!-- <button onclick="callGetValsFun()">Get Values</button>
+    <p id="log"></p> -->
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Define Properties</title>
+    <script>
+        var hero = Object.create(null);
+        Object.defineProperties(hero,{
+            title : {
+                value : "Ironman",
+                writable : true, 
+                enumerable : true
+            },
+            firstname : {
+                value :"Tony",
+                enumerable : true
+            },
+            lastname : {
+             value : "Stark", 
+            enumerable : true
+            }, 
+            power : {
+                value : 8,
+                enumerable : true
+            },
+            fullname : {
+                value : function(){
+                    return this.firstname+ " " +this.lastname;
+                }
+            }
+        });
+        console.log(hero.title);
+        console.log(hero.firstname);
+        console.log(hero.lastname);
+        console.log(hero.power);
+        console.log(hero.fullname());
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

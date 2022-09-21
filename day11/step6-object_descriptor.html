@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>get & set</title>
+    <script>
+        var hero = Object.create(null);
+        Object.defineProperty(hero, "title", {
+            value : "Ironman",
+            writable : true
+        });
+        Object.defineProperty(hero, "accessTitle", { // here we can not write writable to be true. 
+                                                    //writable needs to be declared in different descriptor and only if writable is true then only we can access the value i.e use get and set.
+            get : function(){
+                return this.title;
+            },
+            set : function(ntitle){
+                this.title = ntitle;
+            }
+        });
+
+        console.log(hero.title);
+        console.log(hero.accessTitle);
+        hero.accessTitle = "Superman";
+        console.log(hero.accessTitle);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

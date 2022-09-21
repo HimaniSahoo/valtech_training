@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generator</title>
+    <script>
+        // function *myfun(){      //* is used generate multiple return inside the function. generator converts to an iterable object.
+        //     yield "val1";
+        //     yield "val2";
+        //     yield "val3";
+        //     yield "val4";
+        //     yield "val5";
+        // };
+
+        // let fun = myfun();
+
+        // console.log(fun.next().value);
+        // console.log(fun.next().value);
+        // console.log(fun.next().value);
+        // console.log(fun.next().value);
+        // console.log(fun.next().value);
+        // console.log(fun.next().value);
+        // console.log(fun.next().value);
+        // console.log(fun.next().value);
+        // console.log(fun.next().value);
+
+        var myfun = function*(){
+            yield "value1";
+            yield "value2";
+            yield "value3";
+        }
+
+        console.log(myfun.next().value);
+        console.log(myfun.next().value);
+        console.log(myfun.next().value);
+        console.log(myfun.next().value);
+        console.log(myfun.next().value);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

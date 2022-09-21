@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extended Object</title>
+    <script>
+        // var obj1 = { title : "Object 1"};
+        // var obj2 = new Object({title : "Object 1"});
+        // var obj3 = Object.create(null);
+
+        // console.log(typeof obj1, typeof obj2, typeof obj3);
+
+        var hero = {
+            title : "Batman",
+            firstname : "Bruce",
+            lastname : "wayne",
+        };
+        var human = Object.create(null);
+        Object.defineProperty(human, "version", {value : 100, enumerable : true});
+        //object descripter
+        var hero = Object.create(human);
+        Object.defineProperty(hero, "title",{value : "Batman", writable : true, enumerable : true, configurable : true}); //by default writable is false which means we can't change anything so where we want it to change we make writable as true. 
+        console.log(hero.title);
+        hero.title = "Joker";
+        console.log(hero.title);
+        console.log(hero.version);
+        console.log("+++++++++++++++++++++++++++++++++")
+        for(var prop in hero){
+            console.log(prop, hero[prop]);
+        };
+        console.log("-------------------------------")
+        Object.defineProperty(hero, "title", {value : "Joker", writable : false, enumerable : false});
+
+        
+        for(var prop in hero){
+            console.log(prop, hero[prop]);
+            console.log(prop, hero[prop]);
+        };
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
