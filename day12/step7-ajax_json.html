@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            display: block;
+            width: 800px;
+            margin: 100px auto;
+        }
+        .container{
+            width: 860px;
+            height: 200px;
+            padding:10px;
+            margin: 100px auto;
+            color: aliceblue;
+            font-family: sans-serif;
+            text-align: justify;
+            overflow: auto;
+            background: linear-gradient(45deg, rgb(236, 81, 81),rgb(245, 230, 143)) ;
+            display: table;
+            
+        }
+
+        .container div {
+            width: 395px;
+            color: rgb(137, 206, 137);
+            font-family: sans-serif;
+            font-weight: bold;
+            margin: 5px;
+            padding: 10px;
+            background: linear-gradient(rgb(2, 2, 10),rgb(75, 77, 78)) ;
+            float: left;
+        }
+        
+    </style>
+    <script>
+        var xhr = new XMLHttpRequest();
+        xhr.addEventListener("readystatechange", xhrHandler);
+        function xhrHandler(evt){
+            if(evt.target.readyState === 4){
+                JSON.parse(evt.target.responseText).root.participant.forEach(val => {
+                    // console.log(val.firstname)
+                    document.getElementsByClassName("container")[0].innerHTML += `<div><h2>${val.firstname} ${val.lastname}</h2><h3>${val.email}</h3><h3>${val.city}</h3></div>`
+                     
+                })
+            }
+        }
+        function clickHandler(){
+            xhr.open("get", "data.json", true);
+            xhr.send();
+        }
+        function init(){
+            document.querySelector("button").addEventListener("click", clickHandler)
+        }
+        document.addEventListener("DOMContentLoaded", init);
+    </script>
+</head>
+<body>
+    <button>Get data</button>
+    <div class="container"></div>
+    <!-- <template id="mytemp">
+        <div>
+            <h2>${val.firstname+" "+val.lastname}</h2>
+            <h3>${val.email}</h3>
+            <h3>${val.city}</h3>
+        </div>
+    </template> -->
+</body>
+</html>
