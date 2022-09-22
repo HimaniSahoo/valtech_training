@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            display: block;
+            margin: 10px auto;
+            width: 520px;
+        }
+        .container{
+            width: 500px;
+            height: 200px;
+            padding:10px;
+            margin: 100px auto;
+            /* background-color: rgb(25, 25, 230); */
+            color: aliceblue;
+            font-family: sans-serif;
+            text-align: justify;
+            overflow: auto;
+            background: linear-gradient(rgb(71, 78, 2),rgb(245, 230, 143)) ;
+        }
+        .container div {
+            /* background-color: aquamarine; */
+            color: rgb(230, 189, 230);
+            font-family: sans-serif;
+            font-weight: bold;
+            margin: 5px;
+            padding: 10px;
+            background: linear-gradient(rgb(2, 2, 10),rgb(75, 77, 78)) ;
+        }
+    </style>
+    <script>
+        var xhr = new XMLHttpRequest();
+        xhr.addEventListener("readystatechange", readyStateChangeHandler);
+        function readyStateChangeHandler(){
+            console.log("State Changed", xhr.readyState);
+            if(xhr.readyState === 4){
+                //document.getElementsByClassName("container")[0].textContent = xhr.responseText;
+                //document.getElementsByClassName("container")[0].textContent = xhr.responseXML;
+                for(var i = 0 ; i < xhr.responseXML.getElementsByTagName("participant").length ; i++){
+                    //console.log(xhr.responseXML.getElementsByTagName("participants")[i].getElementsByTagName("firstname")[0].firstChild.nodeValue);
+                    document.getElementsByClassName("container")[0].innerHTML += "<div>"+xhr.responseXML.getElementsByTagName("participant")[i].getElementsByTagName("firstname")[0].firstChild.nodeValue+"</div>";
+                }
+            }
+        }
+        function clickHandler(){
+            xhr.send();
+        }
+        
+        function init(){
+            xhr.open("get", "data.xml", true);
+            // document.getElementsByTagName("button")[0]
+            document.querySelector("button").addEventListener("click", clickHandler)
+        }
+        document.addEventListener("DOMContentLoaded", init);
+    </script>
+</head>
+<body>
+    <button>Get Data</button>
+    <div class="container">
+        
+    </div>
+</body>
+</html>

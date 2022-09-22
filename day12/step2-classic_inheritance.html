@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROTOTYPE INHERITANCE</title>
+    <script>
+        class Person{
+            constructor(hname){
+                this.name = hname;
+            }
+            canWalk(){
+                return "I can walk";
+            }
+           
+        }
+        class Hero extends Person{
+            title = "default title";
+            firstname = "default firstname";
+            lastname = "default lastname";
+            #mission = "my secret mission";   //# is used to indicate private property
+            static version = 10001;
+            constructor(htitle,fname,lname,hname){
+                super(hname);
+                this.title = htitle;
+                this.firstname = fname;
+                this.lastname = lname;
+            }
+            fullname(){
+                return this.first+" "+this.lastname;
+            }
+            static saypower(){
+                return 7;
+            }
+            get mission(){
+                return this.#mission;
+            }
+            set mission(mission){
+                this.#mission = nmission;
+            }
+            sayname(){
+                return this.name;
+            }
+        };
+        var hero = new Hero("Batman","Bruce","Banners","DC hero");
+
+       
+
+        console.log(hero.title);
+
+        console.log(hero.firstname);
+
+        console.log(hero.lastname);
+
+        console.log(hero.fullname());
+
+        console.log(hero.canWalk());
+
+        console.log(hero.sayName());
+
+        console.log(hero.version);
+
+        console.log(Hero.version);
+
+        console.log(Hero.saypower());
+
+        console.log(hero.mission);
+
+        hero.mission = "Save the world";
+
+        console.log(hero.mission);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
