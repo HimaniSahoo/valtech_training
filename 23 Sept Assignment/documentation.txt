@@ -1,0 +1,5 @@
+Problem Statement : Using the following data in your application through XMLHttpRequest
+                    plot a Bar Chart on a canvas depicting the cases handled by each of these heroes.
+
+Outcome: In this assignment I made a canvas and plotted the graph having agent names and the cases handled by each hero.
+         This helped me explore a lot and fetch data from different file using the javascript. 
