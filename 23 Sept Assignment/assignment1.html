@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment</title>
+    <style>
+        canvas{
+            border: 2px solid black;
+            margin:10px auto;
+            display:block;
+        }
+        button{
+            margin:10px auto;
+            display: block;
+            background-color: rgb(228, 104, 21);
+        }
+    </style>
+    <script>
+        
+
+
+
+        var xhr=new XMLHttpRequest();
+        xhr.addEventListener("readystatechange",xrhHandler);
+        function xrhHandler(evt){
+            if(evt.target.readyState===4){  
+                var can=document.getElementById("can");
+                var ctx= can.getContext("2d");
+
+                ctx.beginPath();
+                ctx.strokeStyle="black";
+                ctx.moveTo(90,90);
+                ctx.lineTo(90,900);
+                ctx.stroke();     
+               
+
+                ctx.beginPath();
+                ctx.strokeStyle="black";
+                ctx.moveTo(50,800);
+                ctx.lineTo(800,800);
+                ctx.stroke();
+
+                ctx.beginPath(); 
+                ctx.font="bold 25px san-serif";
+                ctx.fillStyle = "black";
+                ctx.fillText("Agent Names",400,880);
+                ctx.closePath();
+
+                ctx.fillText("100-",49,707);
+                ctx.fillText("200-",49,607);
+                ctx.fillText("300-",49,507);
+                ctx.fillText("400-",49,407);
+
+                let value=JSON.parse(evt.target.responseText).data
+                for(var i=0;i<value.length;i++){;
+                    var cases=value[i].casesHandled;
+                    var agent=value[i].agentName;
+                    var color=value[i].col;
+                    console.log(cases,agent,color)
+
+                    ctx.beginPath();
+                    ctx.strokeStyle="black";
+                    ctx.fillStyle=value[0].col;
+                    ctx.moveTo(150,800);
+                    ctx.lineTo(150,800-value[0].casesHandled);
+                    ctx.lineTo(200,800-value[0].casesHandled);
+                    ctx.lineTo(200,800);
+                    ctx.moveTo(150,800);
+                    ctx.font="18px san-serif";
+                    ctx.fillText(value[0].agentName,150,830);
+                    ctx.fill();
+                    ctx.stroke();
+                    ctx.closePath();
+
+                    ctx.beginPath();
+                    ctx.strokeStyle="black";
+                    ctx.fillStyle=value[1].col;
+                    ctx.moveTo(250,800);
+                    ctx.lineTo(250,800-value[1].casesHandled);
+                    ctx.lineTo(300,800-value[1].casesHandled);
+                    ctx.lineTo(300,800);
+                    ctx.moveTo(250,800); 
+                    ctx.font="18px san-serif";
+                    ctx.fillText(value[1].agentName,250,830);  
+                    ctx.fill();
+                    ctx.stroke();
+                    ctx.closePath();
+
+                    ctx.beginPath();
+                    ctx.strokeStyle="black";
+                    ctx.fillStyle=value[2].col;
+                    ctx.moveTo(350,800);
+                    ctx.lineTo(350,800-value[2].casesHandled);
+                    ctx.lineTo(400,800-value[2].casesHandled);
+                    ctx.lineTo(400,800);
+                    ctx.moveTo(350,800);   
+                    ctx.font="18px san-serif";
+                    ctx.fillText(value[2].agentName,350,830);
+                    ctx.fill();
+                    ctx.stroke();
+                    ctx.closePath();
+
+                    ctx.beginPath();
+                    ctx.strokeStyle="black";
+                    ctx.fillStyle=value[3].col;
+                    ctx.moveTo(450,800);
+                    ctx.lineTo(450,800-value[3].casesHandled);
+                    ctx.lineTo(500,800-value[3].casesHandled);
+                    ctx.lineTo(500,800);
+                    ctx.moveTo(450,800);   
+                    ctx.font="18px san-serif";
+                    ctx.fillText(value[3].agentName,450,830);
+                    ctx.fill();
+                    ctx.stroke();
+                    ctx.closePath();
+
+                    ctx.beginPath();
+                    ctx.strokeStyle="black";
+                    ctx.fillStyle=value[4].col;
+                    ctx.moveTo(550,800);
+                    ctx.lineTo(550,800-value[4].casesHandled);
+                    ctx.lineTo(600,800-value[4].casesHandled);
+                    ctx.lineTo(600,800);
+                    ctx.moveTo(550,800);  
+                    ctx.font="18px san-serif";
+                    ctx.fillText(value[4].agentName,550,830); 
+                    ctx.fill();
+                    ctx.stroke();
+                    ctx.closePath();
+
+                    ctx.beginPath();
+                    ctx.strokeStyle="black";
+                    ctx.fillStyle=value[5].col;
+                    ctx.moveTo(650,800);
+                    ctx.lineTo(650,800-value[5].casesHandled);
+                    ctx.lineTo(700,800-value[5].casesHandled);
+                    ctx.lineTo(700,800);
+                    ctx.moveTo(650,800);   
+                    ctx.font="18px san-serif";
+                    ctx.fillText(value[5].agentName,650,830);
+                    ctx.fill();
+                    ctx.stroke();
+                    ctx.closePath();
+                }           
+        }
+        }
+        function clickHandler(){
+            xhr.open("get","data.json",true);
+            xhr.send();
+        }
+        function init(){
+            document.querySelector("button").addEventListener("click",clickHandler);
+        }
+        document.addEventListener("DOMContentLoaded",init);
+    </script>
+</head>
+<body>
+  
+    <canvas id="can" width="850" height="900"></canvas>
+    <br>
+    <button>Plot Graph</button>
+</body>
+</html>
