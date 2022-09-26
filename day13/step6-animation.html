@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            width: 200px;
+            margin: auto;
+            display: block;
+            overflow: auto;
+        }
+        .container{
+            width: 200px;
+            height: 100px;
+            padding: 10px;
+            margin: 10px auto;
+            background-color: rgb(253, 175, 236);
+            overflow: auto;
+            display: block;
+        }
+    </style>
+    <script src="lib/jquery-3.6.1.js"></script>
+    <script>
+        $(function(){
+            $("button").eq(0).on("click", function(){
+                $(".container").show();
+            })
+        })
+        $(function(){
+            $("button").eq(1).on("click", function(){
+                $(".container").hide();
+            })
+        })
+        $(function(){
+            $("button").eq(2).on("click", function(){
+                $(".container").show(1000);
+            })
+        })
+        $(function(){
+            $("button").eq(3).on("click", function(){
+                $(".container").hide(1000);
+            })
+        })
+        $(function(){
+            $("button").eq(4).on("click", function(){
+                $(".container").toggle(1000);
+            })
+        })
+        $(function(){
+            $("button").eq(5).on("click", function(){
+                $(".container").fadeIn(1000);
+            })
+        })
+        $(function(){
+            $("button").eq(6).on("click", function(){
+                $(".container").fadeOut(1000);
+            })
+        })
+        $(function(){
+            $("button").eq(7).on("click", function(){
+                $(".container").fadeTo(1000,0.5);
+            })
+        })
+        $(function(){
+            $("button").eq(8).on("click", function(){
+                $(".container").slideUp(1000);
+            })
+        })
+        $(function(){
+            $("button").eq(9).on("click", function(){
+                $(".container").slideDown(1000);
+            })
+        })
+        $(function(){
+            $("button").eq(10).on("click", function(){
+                $(".container").slideToggle(1000);
+            })
+        })
+    </script>
+</head>
+<body>
+    <button>show</button>
+    <button>hide</button>
+    <button>show in 1s</button>
+    <button>hide in 1s</button>
+    <button>toggle</button>
+    <button>fade in</button>
+    <button>fade out</button>
+    <button>fade to</button>
+    <button>slide up</button>
+    <button>slide down</button>
+    <button>slide toggle</button>
+
+    <div class="container"></div>
+</body>
+</html>
