@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/jquery-3.6.1.js"></script>
+    <script>
+        $(()=>{
+           // $("ul li").append(" hello everyone");
+           $("p").first().next().next().css("border","3px solid green");
+        //    $(".list3").appendTo(".list1");
+        //    $("p").nextAll().css("border","2px dotted green");
+        //    $(".list5").prependTo(".list2")
+        //    $(".list4").insertAfter(".list1");
+           $(".list7").insertBefore(".list1");
+           $("ul").find(".list1").css("background-color", "yellow");
+           $("ul li").last().prev().css("border","3px solid crimson");
+
+        })
+    </script>
+    <style>
+        li {
+            border: 2px solid rgb(44, 58, 184);
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li class="list1">list item 1</li>
+        <li class="list2">list item 2</li>
+        <li class="list3">list item 3</li>
+        <li class="list4">list item 4</li>
+        <li class="list5">list item 5</li>
+        <li class="list6">list item 6</li>
+        <li class="list7">list item 7</li>
+    </ul>
+    <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea inventore ratione earum sapiente aliquam aut officia recusandae, ut quod sed dolorum nesciunt deserunt! Corrupti aspernatur voluptatem sit suscipit, dolore magnam!
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea inventore ratione earum sapiente aliquam aut officia recusandae, ut quod sed dolorum nesciunt deserunt! Corrupti aspernatur voluptatem sit suscipit, dolore magnam!
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea inventore ratione earum sapiente aliquam aut officia recusandae, ut quod sed dolorum nesciunt deserunt! Corrupti aspernatur voluptatem sit suscipit, dolore magnam!
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea inventore ratione earum sapiente aliquam aut officia recusandae, ut quod sed dolorum nesciunt deserunt! Corrupti aspernatur voluptatem sit suscipit, dolore magnam!
+    </p>
+    <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea inventore ratione earum sapiente aliquam aut officia recusandae, ut quod sed dolorum nesciunt deserunt! Corrupti aspernatur voluptatem sit suscipit, dolore magnam!
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea inventore ratione earum sapiente aliquam aut officia recusandae, ut quod sed dolorum nesciunt deserunt! Corrupti aspernatur voluptatem sit suscipit, dolore magnam!
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea inventore ratione earum sapiente aliquam aut officia recusandae, ut quod sed dolorum nesciunt deserunt! Corrupti aspernatur voluptatem sit suscipit, dolore magnam!
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea inventore ratione earum sapiente aliquam aut officia recusandae, ut quod sed dolorum nesciunt deserunt! Corrupti aspernatur voluptatem sit suscipit, dolore magnam!
+    </p>
+    <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea inventore ratione earum sapiente aliquam aut officia recusandae, ut quod sed dolorum nesciunt deserunt! Corrupti aspernatur voluptatem sit suscipit, dolore magnam!
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea inventore ratione earum sapiente aliquam aut officia recusandae, ut quod sed dolorum nesciunt deserunt! Corrupti aspernatur voluptatem sit suscipit, dolore magnam!
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea inventore ratione earum sapiente aliquam aut officia recusandae, ut quod sed dolorum nesciunt deserunt! Corrupti aspernatur voluptatem sit suscipit, dolore magnam!
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea inventore ratione earum sapiente aliquam aut officia recusandae, ut quod sed dolorum nesciunt deserunt! Corrupti aspernatur voluptatem sit suscipit, dolore magnam!
+    </p>
+</body>
+</html>

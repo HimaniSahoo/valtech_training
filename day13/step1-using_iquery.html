@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/jquery-3.6.1.js"></script>
+    <!-- <script>  alert("hello"); </script> -->
+    <script>
+        $(()=>{
+             $("ul").css("border","2px solid black");
+            // $("li.box1").css("background-color","coral");
+            // $("#game").css("border","1px dashed red");
+            // $("ul:has(.x)").css("border","2px solid blue");
+            // $("ul:parent").css("border","2px solid green");
+            // $("p:parent").css("border","2px solid brown");
+            // $("p").css("border","2px solid lightblue");
+            // $("p:empty").css("border","2px solid olive");
+            // $("li:first").css("background-color","pink");
+            // $("li:eq(1),li:gt(2)").css("background-color","yellow");
+            // $("ul:contains(arrived)").css("border"," 2px solid orange");
+            //$(":header").css("border","1px solid darkblue");
+            $("id:we").css("border","3px solid green");
+           alert($("li:hidden").text());
+
+        })
+    </script>
+</head>
+<body>
+    <ul>
+        <li id="we">list items 1</li>
+        <li>list items 2</li>
+        <li class="x">list items 3</li>
+        <li>list items 4</li>
+        <li>list items 5</li>
+    </ul>
+    <ul>
+         <li style="display: none;">hidden element</li>
+        </ul>
+    <ul>
+        <li>list items 1</li>
+        <li class="y">list items 2</li>
+        <li>list items 3 goods arrived</li>
+        <li>list items 4</li>
+        <li>list items 5</li>
+    </ul>
+    <h1>Heading 1</h1>
+    <p></p>
+    <ol>
+        <li class="box1">Ordered List</li>
+        <li class="box2">Ordered List</li>
+        <li class="box3">Ordered List</li>
+        <li class="box4">Ordered List</li>
+        <li class="box5">Ordered List</li>
+        
+    </ol>
+    <h2>
+        heading 2
+    </h2>
+    <p id="game">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate atque veniam sed. Animi ducimus impedit optio in natus quasi tempore! Qui amet ad sint, voluptatem eos error porro eligendi iure?</p>
+    <p id="play">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate atque veniam sed. Animi ducimus impedit optio in natus quasi tempore! Qui amet ad sint, voluptatem eos error porro eligendi iure?</p>
+</body>
+</html>

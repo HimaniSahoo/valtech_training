@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/jquery-3.6.1.js"></script>
+    <style>
+        button{
+            width: 500px;
+            margin: auto;
+            display: block;
+            overflow: auto;
+
+
+        }
+        .container{
+            width: 600px;
+            height: 200px;
+            padding: 10px;
+            margin: 10px auto;
+            background-color: brown;
+            color: aquamarine;
+            font-family: sans-serif;
+            overflow: auto;
+            display: block;
+            
+        }
+    </style>
+    <script>
+        $(function(){
+            $("button").click(function(){
+                // $(".container").load("data/data.txt",function(res,status,jqxhr){
+                //     console.log(status);
+                // })
+                /*$.getJSON("data/data.json",function(res,status,jqxhr){
+                    //$(".container").text(JSON.stringify(res));
+                     $.each(res,function(idx,val){
+                        console.log(val.participant, idx.participant);
+                    })
+                });*/
+                promise = $.getJSON("data/data.json");
+                promise.fail(function(err, s, jqxhr){
+                    console.log(err)
+                })
+                promise.done(function(res,status,jqxhr){
+                    $(res.root.participant).each(function(idx, val) {
+                        $(".container").append("<p>"+val.firstname+ " "+val.lastname+"</p>");
+                    })
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+    <button>get data</button>
+    <div class="container"></div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            background-color: rgb(49, 207, 102);
+            padding: 5px;
+
+        }
+        div p{
+            background-color: goldenrod;
+            padding: 5px;
+           
+        }
+    </style>
+    <script src="lib/jquery-3.6.1.js"></script>
+    <script>
+        $(()=>{
+            //$("p.d").wrap("<div/>");
+            //$("p.box").wrapAll("<ol/>");
+            $("p").wrapAll("<div/>");
+            //$("li").unwrap();
+            //$("p").remove();
+        })
+    </script>
+</head>
+<body>
+    <ol>
+        <li>list items</li>
+        <li>list items</li>
+        <li>list items</li>
+    </ol>
+    <p class="box a">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore repellendus delectus sunt enim, harum deserunt reprehenderit numquam odio veritatis dolorum, perspiciatis voluptatibus ut libero sequi vero illo? Exercitationem, inventore voluptatibus.</p>
+    <p class="box b">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore repellendus delectus sunt enim, harum deserunt reprehenderit numquam odio veritatis dolorum, perspiciatis voluptatibus ut libero sequi vero illo? Exercitationem, inventore voluptatibus.</p>
+    <p class="box c">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore repellendus delectus sunt enim, harum deserunt reprehenderit numquam odio veritatis dolorum, perspiciatis voluptatibus ut libero sequi vero illo? Exercitationem, inventore voluptatibus.</p>
+    <p class="box d">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore repellendus delectus sunt enim, harum deserunt reprehenderit numquam odio veritatis dolorum, perspiciatis voluptatibus ut libero sequi vero illo? Exercitationem, inventore voluptatibus.</p>
+    <p class="box e">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore repellendus delectus sunt enim, harum deserunt reprehenderit numquam odio veritatis dolorum, perspiciatis voluptatibus ut libero sequi vero illo? Exercitationem, inventore voluptatibus.</p>
+</body>
+</html>
