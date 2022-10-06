@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    /*function myComp(){  //element
+        return  <ol>
+                    <li>list item 1</li>
+                    <li>list item 2</li>
+                    <li>list item 3</li>
+                    <li>list item 4</li>
+                    <li>list item 5</li>
+                </ol>
+    }
+    ReactDOM.createRoot(document.getElementById("root")).render(myComp());
+    */
+    function MyComp(){            //component
+        //li needs to be inside root i.e ol
+        return  <ol>                      
+                    <li>list item 1</li>
+                    <li>list item 2</li>
+                    <li>list item 3</li>
+                    <li>list item 4</li>
+                    <li>list item 5</li>
+                </ol>
+    }
+    ReactDOM.createRoot(document.getElementById("root")).render(<MyComp/>);
+       
+  </script>
+</head>
+<body>
+    <div id="root"></div>
+   
+</body>
+</html>
