@@ -1,0 +1,24 @@
+import { connect } from "react-redux";
+import { addHero, removeHero } from "../redux";
+
+let HeroHookComp = (props)=>{
+    return <div>
+            <h2> Hero Component</h2>
+            <h3> Total Heroes Recruited : {props.noOfHeros}</h3>
+            <button onClick={props.addHero}>Add Hero</button>
+            <button onClick={props.removeHero}>Remove Hero</button>
+        </div>
+}
+
+const mapStateToProps = (state)=>{
+    return{
+        noOfHeros : state.heroes.noOfHeros
+    }
+}
+const mapDispatchToProps = (dispatch)=>{
+    return{
+        addHero : ()=> dispatch( addHero()),
+        removeHero : ()=> dispatch( removeHero())
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(HeroHookComp);
