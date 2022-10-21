@@ -1,0 +1,417 @@
+import {  Text, View, SafeAreaView } from 'react-native';
+
+export default function App() {
+  return (
+    <SafeAreaView>
+    <View style={{paddingTop : 50, backgroundColor : "coral"}}>
+      <Text> Valtech_</Text>
+      <Text> Valtech_</Text>
+      <Text> Valtech_</Text>
+      </View>
+    </SafeAreaView>
+  );
+}
+---------------------------------------------------------------------
+
+import { useState } from 'react';
+import {  Text, View, SafeAreaView, ActivityIndicator, Pressable } from 'react-native';
+
+export default function App() {
+  let [scale, setScale] = useState(10)
+  return (
+   
+    <View style={{paddingTop: 30}}>
+      <Pressable onPress={()=> setScale( scale + 5)}>
+          <ActivityIndicator size={scale}/>
+      </Pressable>
+      
+      </View>
+   
+  );
+}
+
+--------------------------------------------------------------------------------
+
+import {  Text, View, SafeAreaView } from 'react-native';
+
+export default function App() {
+  return (
+  <SafeAreaView>
+    <View style={{paddingTop: 30}}>
+     <Text style={{textAlign : "Right"}}>Title : Batman</Text>
+     <Text>First Name : Bruce</Text>
+     <Text>Last Name : Wayne</Text>
+     <Text>Power : 7 </Text>
+    </View>
+  </SafeAreaView> 
+  );
+}
+
+--------------------------------------------------------------------------------------------
+
+import {   View, SafeAreaView, Button } from 'react-native';
+
+export default function App() {
+  return (
+  <SafeAreaView>
+    <View style={{paddingTop: 30}}>
+     <Button onPress={()=>console.log("you clicked button")} title="Click me"></Button>
+    </View>
+  </SafeAreaView> 
+  );
+}
+
+---------------------------------------------------------------------------------------------------
+
+import { useState } from 'react';
+import {   Text, View, SafeAreaView, Button, Alert } from 'react-native';
+
+export default function App() {
+  let [message, setMessage] = useState("")
+  let pressHandler = ()=>{
+    console.log("you clicked the button");
+    Alert.alert("Alert Title comes here", "is it raining.. ?",[
+      {text : "Yes", onPress : ()=> setMessage("You said Yes")},
+      {text : "No", onPress : ()=> setMessage("You said No")}
+    ])
+  }
+  return (
+  <SafeAreaView>
+    <View style={{paddingTop: 30}}>
+      <Text>{ message }</Text>
+     <Button onPress={pressHandler} title="Click me"></Button>
+    </View>
+  </SafeAreaView> 
+  );
+}
+
+--------------------------------------------------------------------------------------------------------
+
+import { useState } from 'react';
+import {   Text, View, SafeAreaView, Dimensions, Button } from 'react-native';
+
+export default function App() {
+ let [sDimensions, setSDimensions] = useState({})
+ let [wDimensions, setWDimensions] = useState({})
+ let getDimensions =()=>{
+  setSDimensions(Dimensions.get("screen"))
+  setWDimensions(Dimensions.get("window"))
+ }
+ console.log(Dimensions.get("screen"));
+  return (
+  <SafeAreaView>
+    <View style={{paddingTop: 30}}>
+      <Text>{ " Screen Dimensions" }</Text>
+      <Text>Width : {sDimensions.width}</Text>
+      <Text>Height : {sDimensions.height}</Text>
+      <Text>{ " Window Dimensions" }</Text>
+      <Text>Width : {wDimensions.width}</Text>
+      <Text>Height : {wDimensions.height}</Text>
+      <Button title="Get Dimensons"  onPress={getDimensions}></Button>
+    </View>
+  </SafeAreaView> 
+  );
+}
+
+---------------------------------------------------------------------------------------------------------
+
+import {   Text, View, SafeAreaView, Dimensions, Button, Platform, StyleSheet } from 'react-native';
+
+export default function App() {
+  console.log(JSON.stringify( Platform ))
+  return (
+  <SafeAreaView>
+    <View style={ myStyle.viewstyle}>
+      <Text>{ " Platform " }</Text>
+      <Text>{ Platform.OS}</Text>
+    </View>
+  </SafeAreaView> 
+  );
+}
+
+let myStyle = StyleSheet.create({
+  viewstyle : {
+    paddingTop: Platform.OS === "android" ? 30 : 0
+  }
+})
+
+---------------------------------------------------------------------------------------------------------------
+
+import {   View, SafeAreaView, Image } from 'react-native';
+
+export default function App() {
+let hero =  "hulk" 
+  return (
+  <SafeAreaView>
+    <View>
+      <Image source={ require("./assets/images/"+hero+".jpg")}></Image>
+    </View>
+  </SafeAreaView> 
+  );
+}
+
+------------------------------------------------------------------------------------------------------------------
+
+import {   View, SafeAreaView, Image } from 'react-native';
+import ironman  from "./assets/images/ironman.jpg"
+export default function App() {
+  return (
+  <SafeAreaView>
+    <View>
+      <Image source={ ironman } style={{ width : 100, height : 100 }}></Image>
+    </View>
+  </SafeAreaView> 
+  );
+}
+
+
+------------------------------------------------------------------------------------------------------------------
+
+import {   View, SafeAreaView, Image } from 'react-native';
+import ironman  from "./assets/images/ironman.jpg"
+export default function App() {
+  return (
+  <SafeAreaView>
+    <View>
+      <Image source={ ironman } style={{ width : 100, height : 100 }}></Image>
+      <Image source={ { uri : 'https://picsum.photos/200', width : 200, height : 200 }}></Image>
+    </View>
+  </SafeAreaView> 
+  );
+}
+------------------------------------------------------------------------------------------------------------------
+
+import { StyleSheet, Text, View} from "react-native";
+
+const Flex = () => {
+  return (
+    
+    <View style={[styles.container, {
+      flexDirection: "column"
+    }]}>
+      <View style={{ flex: 2, backgroundColor: "#4f772d" }}>
+        <Text style={{textAlign : "center" ,lineHeight : "10"}}>Header</Text>
+      </View>
+      <View style={{ flex: 5, backgroundColor: "#90a955" }}>
+        <Text style={{textAlign : "center" ,lineHeight : "10"}}>Content</Text>
+      </View>
+      <View style={{ flex: 3, backgroundColor: "#ecf39e" }}>
+      <Text style={{textAlign : "center" ,lineHeight : "10"}}>Footer</Text></View>
+    </View>
+    
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 20,
+  },
+});
+
+export default Flex;
+
+------------------------------------------------------------------------------------------------------------------
+
+import { StyleSheet, Text, View, Pressable } from "react-native";
+
+const Flex = () => {
+  return (
+    <View style={[styles.container, {
+      // Try setting `flexDirection` to `"row"`.
+      flexDirection: "column"
+    }]}>
+     <View style={[styles.container, {
+      // Try setting `flexDirection` to `"row"`.
+      flexDirection: "row",
+      flex : 4, backgroundColor : "yellow"
+    }]}>
+     
+    </View>
+    <View style={[styles.container, {
+      // Try setting `flexDirection` to `"row"`.
+      flexDirection: "row",
+      flex : 1, backgroundColor : "yellow"
+    }]}>
+      <Pressable onPress={()=>setColor()}>
+        <View style={{ flex: 1, backgroundColor: "red" }} />
+      </Pressable>
+      <Pressable onPress={()=>setColor()}>
+        <View style={{ flex: 1, backgroundColor: "darkorange" }} />
+      </Pressable>
+      
+      <View style={{ flex: 1, backgroundColor: "green" }} />
+      <View style={{ flex: 1, backgroundColor: "pink" }} />
+    </View>
+    </View>
+    
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    // padding: 20,
+  },
+});
+
+export default Flex;
+
+----------------------------------------
+
+import { StyleSheet, Text, View} from "react-native";
+
+export default function App()  {
+  return (
+    
+    <View style={[styles.container, {
+      flexDirection: "column"
+    }]}>
+      <View style={{ flex: 2, backgroundColor: "#4f772d" }}>
+        <Text style={{textAlign : "center" ,marginTop : "10", margin : "auto" , fontWeight : "bold", fontSize : "30px"}}>Header</Text>
+      </View>
+      <View style={{ flex: 5, backgroundColor: "#90a955" }}>
+        <Text style={{textAlign : "center"  ,marginTop : "10", margin : "auto", fontWeight : "bold", fontSize : "30px"}}>Content</Text>
+      </View>
+      <View style={{ flex: 3, backgroundColor: "#ecf39e" }}>
+      <Text style={{textAlign : "center"  ,marginTop : "10", margin : "auto", fontWeight : "bold", fontSize : "30px"}}>Footer</Text></View>
+    </View>
+    
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 20,
+  },
+});
+
+-------------------------------------------------------------------------
+Assignment 2
+
+import React, { useState } from "react";
+import { StyleSheet, Text, View } from "react-native";
+
+export default function App(){
+  let [color, setColor] = useState("white")
+  return (
+    <View style={[styles.container, {
+      // Try setting `flexDirection` to `"row"`.
+      flexDirection: "row",
+      backgroundColor: color
+    }]}>
+      
+      <Text  onPress={()=>setColor(styles.box1.backgroundColor)} style={styles.box1} />
+      <Text onPress={()=>setColor(styles.box2.backgroundColor)} style={styles.box2} />
+      <Text onPress={()=>setColor(styles.box3.backgroundColor)} style={styles.box3} />
+      <Text onPress={()=>setColor(styles.box4.backgroundColor)} style={styles.box4} />
+    </View>
+    
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    paddingTop : 20
+    
+  },
+  box1 : {
+    flex :1,
+    backgroundColor : "#a3c4f3",
+    height : 100
+  },
+  box2 : {
+    flex :1,
+    backgroundColor : "#f1c0e8",
+    height : 100
+  },
+  box3 : {
+    flex :1,
+    backgroundColor : "#ffcfd2",
+    height : 100
+  },
+  box4 : {
+    flex :1,
+    backgroundColor : "#fde4cf",
+    height : 100
+  }
+ 
+});
+
+-------------------------------------------------------------------------
+import React, { useState } from "react";
+import { StyleSheet, Button, View, Text,Image } from "react-native";
+import ironman  from "./assets/images/ironman.jpg"
+import batman  from "./assets/images/batman.jpg"
+import superman  from "./assets/images/superman.jpg"
+import spiderman  from "./assets/images/spiderman.jpg"
+export default function App(){
+  let [picture, setPicture] = useState({title:'',img:''})
+  let changeHeroImg= (hero)=>{
+    if (hero=="ironman"){
+      setPicture({title:"ironman", img : ironman})
+    }else if (hero=="batman"){
+      setPicture({title:"batman", img:batman})
+    }else if (hero=="superman"){
+      setPicture({title:"superman", img:superman})
+    }else{
+      setPicture({title:"spiderman", img:spiderman})
+    }
+
+  }
+  return (
+    <View style={[styles.container, {
+      // Try setting `flexDirection` to `"row"`.
+      flexDirection: "column"
+      
+    }]}>
+      <View>
+        <Text>{picture.title}</Text>
+        <Image source={picture.img} />
+      </View>
+      
+      <Button title="Ironman" onPress={()=>changeHeroImg("ironman")} style={styles.box1} />
+      <Button title="Batman" onPress={()=>changeHeroImg("batman")} style={styles.box2} />
+      <Button title="Superman" onPress={()=>changeHeroImg("superman")} style={styles.box3} />
+      <Button title="Spiderman" onPress={()=>changeHeroImg("spiderman")} style={styles.box4} />
+      {/* <Button onPress={()=>setColor(styles.box2.backgroundColor)} style={styles.box2} />
+      <Button onPress={()=>setColor(styles.box3.backgroundColor)} style={styles.box3} />
+      <Button onPress={()=>setColor(styles.box4.backgroundColor)} style={styles.box4} /> */}
+    </View>
+    
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    paddingTop : 20
+    
+  },
+  box1 : {
+    flex :1,
+    backgroundColor : "#a3c4f3",
+    height : 100,
+    width:100,
+    
+  },
+  box2 : {
+    flex :1,
+    backgroundColor : "#f1c0e8",
+    height : 100
+  },
+  box3 : {
+    flex :1,
+    backgroundColor : "#ffcfd2",
+    height : 100
+  },
+  box4 : {
+    flex :1,
+    backgroundColor : "#fde4cf",
+    height : 100
+  }
+ 
+});
+
