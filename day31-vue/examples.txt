@@ -1,0 +1,497 @@
+<template>
+    
+</template>
+<script>
+  export default {
+    data(){
+        return{
+           
+        }
+    }
+    
+  }
+</script>
+<style>
+</style>
+
+...........................................................................................
+example1
+
+<template>
+  <div>
+    <h1> {{title}}</h1>
+    <!-- <input min="0" max="10" type="range" v-model="power"/> range takes strings and not number
+    <h2 v-if="power === '1'"> Power is 1</h2>
+    <h2 v-if="power === '2'"> Power is 2</h2>
+    <h2 v-if="power === '3'"> Power is 3</h2>
+    <h2 v-if="power === '4'"> Power is 4</h2>
+    <h2 v-if="power === '5'"> Power is 5</h2> -->
+    <input min="0" max="10" type="number" v-model="power"/> 
+    <!-- <h2 v-if="power === 1"> Power is 1</h2>
+    <h2 v-if="power === 2"> Power is 2</h2>
+    <h2 v-if="power === 3"> Power is 3</h2>
+    <h2 v-if="power === 4"> Power is 4</h2> -->
+    <h2 v-if="power === 5"> Power is 5</h2>
+    <h2 v-else>power is not 5</h2>
+    <input type="checkbox" v-model="show"/>
+    
+    <template  v-if="show"> <!-- template tag with if and if-else -->
+    <h2>Company Policy</h2>
+    <fieldset>
+      <legend>
+        term and condition
+      </legend>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis ut, omnis porro commodi quo tempore, rerum quos sequi hic placeat modi tenetur, dolorum minima sint vitae quas pariatur laudantium itaque?
+         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id molestiae quod aspernatur tempora perferendis, reprehenderit voluptate dicta deleniti dolore, repellat sint! Voluptatibus explicabo ex in deleniti error cumque! Eligendi, odio!
+         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id molestiae quod aspernatur tempora perferendis, reprehenderit voluptate dicta deleniti dolore, repellat sint! Voluptatibus explicabo ex in deleniti error cumque! Eligendi, odio!
+      </p>
+    </fieldset>
+    </template>
+    <h2 v-if="show">content shown using if</h2>
+    <h2 v-show="show">content shown using show</h2>
+  </div>
+</template>
+
+<script>
+  export default {
+    data(){
+        return{
+            title : "welcome",
+            //power : "4"
+            power : 4,
+            show : false
+        }
+    }
+    
+  }
+</script>
+
+<style>
+
+</style>
+
+
+..................................................................
+
+avengers: ['Black Widow', 'Scarlet Witch', 'Shuri', 'Wasp', 'Captain Marvel', 'Gamora'],
+        names: [
+          { title: 'Wasp', firstname: "Janet", lastname: 'Van Dyne' },
+          { title: 'Scarlet Witch', firstname: "Wanda", lastname: 'Maximoff' },
+          { title: 'Black Widow', firstname: "Natasha", lastname: 'Romanoff' },
+          { title: 'Captain Marvel', firstname: "Carol", lastname: 'Danvers' },
+        ],
+        project : {
+          apptitle : "Avengers App",
+          author : "Vijay",
+          version : 101,
+          year  :2022
+        },
+        ladyAvengers: [
+          {
+            "title": "Wasp",
+            "firstname": "Janet",
+            "lastname": "Van Dyne",
+            "movies": [
+              { "title": "Ant-Man", "year": 2015 },
+              { "title": "Ant‑Man and the Wasp", "year": 2018 },
+              { "title": "Avengers: Endgame", "year": 2019 }
+            ]
+          },
+          {
+            "title": "Scarlet Witch",
+            "firstname": "Wanda",
+            "lastname": "Maximoff",
+            "movies": [
+              { "title": "Captain America: The Winter Soldier", "year": 2014 },
+              { "title": "Avengers: Age of Ultron", "year": 2015 },
+              { "title": "Captain America: Civil War", "year": 2016 },
+              { "title": "Avengers: Infinity War", "year": 2018 },
+              { "title": "Avengers: Endgame", "year": 2019 },
+              { "title": "Doctor Strange in the Multiverse of Madness", "year": 2022 }
+            ]
+          },
+          {
+            "title": "Black Widow",
+            "firstname": "Natasha",
+            "lastname": "Romanoff",
+            "movies": [
+              { "title": "Iron Man 2", "year": 2010 },
+              { "title": "Avengers", "year": 2012 },
+              { "title": "Captain America: The Winter Soldier", "year": 2014 },
+              { "title": "Avengers: Age of Ultron", "year": 2015 },
+              { "title": "Captain America: Civil War", "year": 2016 },
+              { "title": "Avengers: Infinity War", "year": 2018 },
+              { "title": "Avengers: Endgame", "year": 2019 }
+            ]
+          },
+          {
+            "title": "Captain Marvel",
+            "firstname": "Carol",
+            "lastname": "Danvers",
+            "movies": [
+              { "title": "Captain Marvel", "year": 2019 },
+              { "title": "Avengers: Endgame", "year": 2019 }
+            ]
+          },
+          {
+            "title": "Gamora",
+            "firstname": "",
+            "lastname": "",
+            "movies": [
+              { "title": "Guardians of the Galaxy", "year": 2014 },
+              { "title": "Guardians of the Galaxy Vol. 2", "year": 2017 },
+              { "title": "Avengers: Infinity War", "year": 2018 },
+              { "title": "Avengers: Endgame", "year": 2019 }
+            ]
+          },
+          {
+            "title": "Shuri",
+            "firstname": "",
+            "lastname": "",
+            "movies": [
+              { "title": "Black Panther", "year": 2018 },
+              { "title": "Avengers: Infinity War", "year": 2018 },
+              { "title": "Avengers: Endgame", "year": 2019 },
+              { "title": "Black Panther: Wakanda Forever", "year": 2022 }
+            ]
+          }
+]
+ ......................................................................
+
+ example2
+
+ <template>
+  <div>
+    <h1>{{project.apptitle}}</h1>
+    
+    <ul>
+      <li>{{avengers[0]}}</li>
+      <li>{{avengers[1]}}</li>
+      <li>{{avengers[2]}}</li>
+      <li>{{avengers[3]}}</li>
+    </ul>
+    <ul>
+      <!-- <li v-for="(hname, key) in avengers" v-bind:key="key">{{key+1}} {{hname}}</li> -->
+      <li v-for="(hname, key) in avengers" v-bind:key="key">{{(key+1)+ " " +hname}}</li>
+    </ul>
+    <!-- <div v-for="(name, key) in project" v-bind:key="key">{{key.toUpperCase()}} :- {{name}}</div> -->
+    <div v-for="(name, key) in project" v-bind:key="key">{{(key.toUpperCase())+ ":- " +name}}</div>
+    <table>
+      <thead>
+        <th>Title</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Movies</th>
+      </thead>
+      <tbody>
+        <tr v-for="(aname,key) in ladyAvengers" :key="key">
+          <td>{{aname.title}}</td>
+          <td>{{aname.firstname}}</td>
+          <td>{{aname.lastname}}</td>
+          <td>
+            <ol>
+              <li v-for="(movie, key) in aname.movies" :key="key">{{movie.title}} || Release year : {{movie.year}}</li>
+            </ol>
+          </td>
+        </tr>
+
+        <tr v-for="({ title, firstname, lastname, movies },key) in ladyAvengers" :key="key">
+          <td>{{ title }}</td>
+          <td>{{ firstname }}</td>
+          <td>{{ lastname }}</td>
+          <td>
+            <ol>
+              <li v-for="({ title, year }, key) in movies" :key="key">{{ title }} || Release year : {{ year }}</li>
+            </ol>
+          </td>
+        </tr>
+        
+      </tbody>
+      </table>
+      
+  </div>
+    
+</template>
+
+<script>
+  export default {
+    data(){
+        return{
+          avengers: ['Black Widow', 'Scarlet Witch', 'Shuri', 'Wasp', 'Captain Marvel', 'Gamora'],
+        names: [
+          { title: 'Wasp', firstname: "Janet", lastname: 'Van Dyne' },
+          { title: 'Scarlet Witch', firstname: "Wanda", lastname: 'Maximoff' },
+          { title: 'Black Widow', firstname: "Natasha", lastname: 'Romanoff' },
+          { title: 'Captain Marvel', firstname: "Carol", lastname: 'Danvers' },
+        ],
+        project : {
+          apptitle : "Avengers App",
+          author : "Vijay",
+          version : 101,
+          year  :2022
+        },
+        ladyAvengers: [
+          {
+            "title": "Wasp",
+            "firstname": "Janet",
+            "lastname": "Van Dyne",
+            "movies": [
+              { "title": "Ant-Man", "year": 2015 },
+              { "title": "Ant‑Man and the Wasp", "year": 2018 },
+              { "title": "Avengers: Endgame", "year": 2019 }
+            ]
+          },
+          {
+            "title": "Scarlet Witch",
+            "firstname": "Wanda",
+            "lastname": "Maximoff",
+            "movies": [
+              { "title": "Captain America: The Winter Soldier", "year": 2014 },
+              { "title": "Avengers: Age of Ultron", "year": 2015 },
+              { "title": "Captain America: Civil War", "year": 2016 },
+              { "title": "Avengers: Infinity War", "year": 2018 },
+              { "title": "Avengers: Endgame", "year": 2019 },
+              { "title": "Doctor Strange in the Multiverse of Madness", "year": 2022 }
+            ]
+          },
+          {
+            "title": "Black Widow",
+            "firstname": "Natasha",
+            "lastname": "Romanoff",
+            "movies": [
+              { "title": "Iron Man 2", "year": 2010 },
+              { "title": "Avengers", "year": 2012 },
+              { "title": "Captain America: The Winter Soldier", "year": 2014 },
+              { "title": "Avengers: Age of Ultron", "year": 2015 },
+              { "title": "Captain America: Civil War", "year": 2016 },
+              { "title": "Avengers: Infinity War", "year": 2018 },
+              { "title": "Avengers: Endgame", "year": 2019 }
+            ]
+          },
+          {
+            "title": "Captain Marvel",
+            "firstname": "Carol",
+            "lastname": "Danvers",
+            "movies": [
+              { "title": "Captain Marvel", "year": 2019 },
+              { "title": "Avengers: Endgame", "year": 2019 }
+            ]
+          },
+          {
+            "title": "Gamora",
+            "firstname": "",
+            "lastname": "",
+            "movies": [
+              { "title": "Guardians of the Galaxy", "year": 2014 },
+              { "title": "Guardians of the Galaxy Vol. 2", "year": 2017 },
+              { "title": "Avengers: Infinity War", "year": 2018 },
+              { "title": "Avengers: Endgame", "year": 2019 }
+            ]
+          },
+          {
+            "title": "Shuri",
+            "firstname": "",
+            "lastname": "",
+            "movies": [
+              { "title": "Black Panther", "year": 2018 },
+              { "title": "Avengers: Infinity War", "year": 2018 },
+              { "title": "Avengers: Endgame", "year": 2019 },
+              { "title": "Black Panther: Wakanda Forever", "year": 2022 }
+            ]
+          }
+]
+
+        }
+    }
+    
+  }
+</script>
+<style>
+</style>
+
+-----------------------------
+sir 
+<template>
+  <div>
+    <h1>{{ title }}</h1>
+    <button v-on:click="myfun">Click Me</button>
+    <button @click="myfun">Click Me</button>
+    <h2>Power : {{ power }}</h2>
+    <button @click="power++"> increase power</button>
+    <button @click="power--"> decrease power</button>
+    <hr>
+    <button @click="increasePower"> increase power</button>
+    <button @click="decreasePower"> decrease power</button>
+    <hr>
+    Power is <input @input="setPower($event)" type="range"/>
+  </div>
+</template>
+ 
+<script>
+export default {
+data(){
+  return {
+    title : "Methods Events Computed ",
+    power : 0
+  }
+},
+methods : {
+  myfun :  () =>{
+    alert("you clicked me")
+  },
+  increasePower(){
+    this.power++
+  },
+  decreasePower(){
+    this.power--
+  },
+  setPower(evt){
+    this.power = evt.target.value
+  }
+}
+}
+</script>
+ 
+<style></style>
+
+----------------------------------
+ example3
+
+ <template>
+    <div>
+      <h1>{{title}}</h1>
+      <button v-on:click="myfun">Click me</button> 
+      <button @click="myfun">Click me</button>
+      <h2>Power: {{ power }}</h2>
+      <button @click="power++">Increase Power</button>
+      <button @click="power--">Decrease Power</button>
+      <hr>
+      <button @click="increasePower">Increase Power</button>
+      <button @click="decreasePower">Decrease Power</button>
+      <hr>
+      Power is<input type="range" @input="setPower"/>
+      on change will chage after the hange has happened and oninput 
+    </div>
+</template>
+<script>
+  export default {
+    data(){
+        return{
+           title : "Computed properties | Method events computed",
+           power : 0
+        }
+    },
+    methods : {
+      myfun(){
+        alert("you clicked me")
+      },
+      increasePower(){
+        this.power++
+      },
+      decreasePower(){
+        this.power
+      },
+      setPower(evt){
+        this.power =evt.target.value
+      }
+    }
+    
+  }
+</script>
+<style>
+</style>
+------------------------\
+
+
+<form>
+  <div class="mb-3">
+    <label for="htitle" class="form-label">Hero title</label>
+    <input type="text" class="form-control" id="htitle">
+    
+  </div>
+  
+  <button type="submit" class="btn btn-primary">Register</button>
+</form>
+
+........................................................................
+
+example4
+
+<template>
+  <div>
+    <h1>{{ title }}</h1>
+    <pre>{{ JSON.stringify(heroinfo, null, 1) }}</pre>
+    <form>
+        <div class="mb-3">
+            <label for="htitle" class="form-label">Hero Title</label>
+            <input  v-model="heroinfo.title" type="text" class="form-control" id="htitle">
+        </div>
+        <div class="mb-3">
+            <label for="hfname" class="form-label">Hero First Name</label>
+            <input v-model="heroinfo.firstname" type="text" class="form-control" id="hfname">
+        </div>
+
+        <div class="mb-3">
+            <label for="hlname" class="form-label">Hero Last Name</label>
+            <input v-model="heroinfo.lastname" type="text" class="form-control" id="hlname">
+        </div>
+
+        <div class="mb-3">
+            <label for="hcity" class="form-label">Hero City</label>
+            <input v-model="heroinfo.city" type="text" class="form-control" id="hcity">
+        </div>
+
+        <div class="mb-3">
+            <label for="hpower" class="form-label">Hero Power</label>
+            <input v-model="heroinfo.power" type="number" class="form-control" id="hpower">
+        </div>
+        
+        <div class="mb-3">
+            <label for="htype" class="form-label">Hero type</label>
+            
+            <select v-model="heroinfo.type">
+              <option value="" selected>Select Hero</option>
+              <option value="avenger" >Avenger</option>
+              <option value="justice_league" >Justice League</option>
+              <option value="indic_hero" >Indic Hero</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="hcf" class="form-label">Hero Can Fly</label>
+            <input true-value="can fly" false-value="cannot fly" v-model="heroinfo.canfly" type="checkbox" id="hcf"/>
+        </div>
+
+        <div class="mb-3">
+            <label for="hgender" class="form-label">Hero Gender</label>
+            <input v-model="heroinfo.gender" name="gen" type="radio" id="hgender" value="male"/> Male
+            <input v-model="heroinfo.gender" name="gen" type="radio" id="hgender" value="female"/>Female
+        </div>
+
+      <button type="submit" class="btn btn-primary">Register</button>
+    </form>
+  </div>
+</template>
+ 
+<script>
+export default {
+data(){
+  return {
+    title : "Forms and Data",
+    heroinfo : {
+      title : '',
+      firstname : '',
+      lastname : '',
+      city : '',
+      power : 0,
+      type : '',
+      gender :'',
+      canfly : ''
+    },
+ 
+  }
+}
+}
+</script>
+ 
+<style></style>
