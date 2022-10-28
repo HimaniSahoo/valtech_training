@@ -1,0 +1,19 @@
+1. .lazy : will trigger data binding after the blur event of the text input 
+2. .number : will convert the input to a number type
+3. .trim : will remove any white space arround string
+ 
+#### event modifiers
+1. .stop: The propagation of the click event will stop.
+2. .prevent: This is used to prevent the reloading of the webpage.
+3. .self: This is used to tell the element to trigger the event if the target element is itself.
+4. .capture: This is used to handle the event of the inner element before the inner element handles it.
+ 
+5. .once: This is used to trigger the event once. or make the content static add v-once to make the content not accept changes more than once, good to use this to optimize the application as vue will mark this tag not to be re-rendered 
+6. .passive: This is used for touch events to improve performance.
+7. .pre allows us to pre render binding expressions in the code 
+ 
+8.   Key Board - .enter .tab .delete .esc .space .up .down .left .right  
+ 
+    System Modifier Keys  - .ctrl .alt  .shift  .meta
+ 
+    Mouse Button Modifiers - .left .right .middle
