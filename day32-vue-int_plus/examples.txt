@@ -1,0 +1,460 @@
+example 1
+
+<template>
+  <div class="box">
+      <h2>{{ title }}</h2>
+      <h3>Hero 's Full name {{ firstname+" "+lastname }}</h3>
+      <h3>Hero 's Full name {{ fullname }}</h3>
+      <h3>Hero 's Full name {{ getFullname() }}</h3>
+      <h4>Power {{ power }}</h4>
+      <input type="number" v-model="power">
+      <button @click="accessPower=10">Set Power to 10</button>
+      <h3>Avenger's total power is {{ avengers.reduce( (initval, val )=>{
+        return initval + val.power
+      }, 0) }}</h3>
+      <h3>Avenger's total power is {{ totalPower }}</h3>
+  </div>
+</template>
+<script>
+  export default {
+    name : "App",
+    data(){
+      return {
+        title : "Vue Training",
+        firstname : "Peter",
+        lastname : "Parker",
+        power : 0,
+        avengers : [
+          { title : "Spiderman", power : 6},
+          { title : "Ironman", power : 7},
+          { title : "Dr Strange", power : 8},
+          { title : "Hulk", power : 9},
+          { title : "Thor", power : 8},
+        ]
+      }
+    },
+    methods : {
+        getFullname(){
+          console.log("getfullname was called", Math.random());
+          return this.firstname+" "+this.lastname;
+        }
+      },
+      computed : {
+        fullname(){
+          console.log("fullname computed was called", Math.random());
+          return this.firstname+" "+this.lastname;
+      },
+      totalPower(){
+        return this.avengers.reduce( (initval, val )=>{
+                    return initval + val.power
+                }, 0)
+      },
+      acessPower : {
+        get(){return this.power},
+        set(npower){this.power = npower}
+      }
+    }
+  }
+</script>
+<style>
+.box{
+  text-align: center;
+  font-family: sans-serif;
+  color : rgb(52, 133, 133)
+}
+</style>
+
+---------------------------------------------------------------------
+
+<template>
+  <div>
+    <h1>{{ title }}</h1>
+    <h2>Power {{ power }}</h2>
+    <button @click="power++">Increase Power</button>
+    <h3>{{ message }}</h3>
+  </div>
+</template>
+<script>
+export default {
+ data(){
+  return {
+    title : "Welcome to Vue Training",
+    power : 6,
+    message : "Hero is not ready to fight"
+  }
+ },
+ watch : {
+  power(npower){
+    // console.log(this.power)
+    // console.log(npower)
+    if(npower >= 5){
+      this.message = "Hero is ready to fight"
+    }
+  } 
+ 
+ }
+}
+</script>
+
+--------------------------------------------------
+
+<template>
+  <div>
+    <h1>{{ title }}</h1>
+    <h2>Power {{ power }}</h2>
+    <button @click="power++">Increase Power</button>
+    <h3>{{ message }}</h3>
+  </div>
+</template>
+<script>
+export default {
+ data(){
+  return {
+    title : "Welcome to Vue Training",
+    power : 0,
+    message : "Hero is not ready to fight"
+  }
+ },
+ watch : {
+  /* power(npower){
+    // console.log(this.power)
+    // console.log(npower)
+    if(npower >= 5){
+      this.message = "Hero is ready to fight"
+    }
+  } */
+  power : {
+    handler(npower){
+      if(npower >= 5){
+      this.message = "Hero is ready to fight"
+    }
+    },
+    immediate : true
+  }
+ }
+}
+</script>
+
+..................................
+app.vue1
+
+<template>
+    <div>
+      <HomeComp :version="appversion" title="Avengers"/>
+      <HomeComp :version="appversion" title="justice league"/>
+      <HomeComp :version="appversion" title="indic heroes"/>
+    </div>
+</template>
+<script>
+import HomeComp from "./components/home.vue"
+  export default {
+    data(){
+        return{
+           power : 0,
+           appversion : 10
+           
+        }
+    },
+    components : {
+      HomeComp
+    }
+    
+  }
+</script>
+<style>
+</style>
+
+......................................
+
+home.vue1
+
+<template>
+    <div>
+        <h3>{{ title }} | Version : {{ version }}</h3>
+        
+    </div>
+</template>
+<script>
+  export default {
+    name : "HomeComp",
+    props : ['title', 'version']
+    
+  }
+</script>
+<style>
+</style>
+
+---------------------------------------------------------------------------
+
+app.vue2
+
+<template>
+  <div>
+    <AppHero details="details about batman comes here " title="Batman" :power="7" photo="http://tooncrush.com/valtech/batman.jpg" />
+    <AppHero details="details about batman comes here " title="Batman" :power="7" photo="http://tooncrush.com/valtech/batman.jpg" />
+    <img :src="herophto" >
+  </div>
+</template>
+<script>
+import AppHero from "./components/apphome.vue";
+ 
+export default{
+  data(){
+    return {
+      power : 0,
+      appversion : 10,
+      herophto :  require('./assets/images/antman.jpg')
+    }
+  },
+  components :{
+    AppHero
+  }
+}
+</script>
+<style></style>
+
+.........................................
+
+apphome.vue2
+
+<template>
+    <div>
+        <h3>{{ title }}</h3>
+        <h4>Power : {{ power + booster }}</h4>
+        <img width="200" :src="photo" :alt="title">
+        <textarea cols="30" rows="10" v-text="details"></textarea>
+    </div>
+  </template>
+  
+  <script>
+    export default {
+      name : "AppHero",
+      // props with types
+     data(){
+        return {
+            booster : 1
+        }
+    },
+      props : {
+        title : String,
+        power : Number,
+        photo : String,
+        details : String
+      }
+      ,
+      components: { }
+    }
+  </script>
+  
+  <style>
+  #app {
+    font-family: sans-serif;
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 60px;
+  }
+  </style>
+
+  ----------------------------------------------------------------------------------------
+
+  app.vue3
+
+  <template>
+  <div>
+    <FamGrand/>
+  </div>
+</template>
+<script>
+import FamGrand from "./components/grand.vue";
+ 
+export default{
+  data(){
+    return {
+    
+    }
+  },
+  components :{
+    FamGrand
+  }
+}
+</script>
+<style></style>
+
+..................................................
+child.vue3
+
+<template>    
+    <div class="box">
+        <h2>Child Component</h2>
+        <h3>{{ message }}</h3>
+    </div>
+</template>
+ 
+<script>
+    export default {
+        name : "FamChild",
+        inject : ['message']
+    }
+</script>
+ 
+<style>
+ 
+</style>
+
+.......................................................
+parent.vue3
+
+<template>    
+    <div class="box">
+        <h2>Parent Component</h2>
+        <FamChild/>
+    </div>
+</template>
+ 
+<script>
+    import FamChild from "./child.vue";
+    export default {
+        name : "FamParent",
+        
+        components: { 
+          FamChild
+        }
+    }
+</script>
+<style>
+ 
+</style>
+
+..............................................................
+grand.vue3 
+
+<template>    
+    <div class="box">
+        <h2>Grand Parent Component</h2>
+        <FamParent/>
+    </div>
+</template>
+ 
+<script>
+    import FamParent from "./parent.vue"
+    export default {
+        name : "FamGrand",
+        components: { 
+          FamParent
+        },
+        provide : {
+            message : 'Hello Family'
+        }
+    }
+</script>
+ 
+<style>
+   .box{
+    border:  2px solid rgb(221, 71, 71);
+    padding: 10px;
+    margin: 10px;
+    text-align: left;
+    max-width: 600px;
+   }
+</style>
+
+-----------------------------------------------------------
+
+app.vue4
+
+<template>
+  <div>
+    <!-- step 1 start -->
+   <!--  
+    <AppHero></AppHero>
+    <AppHero>
+      Hello Hero Component from Parent
+    </AppHero>
+    <AppHero>
+      <button>click Me</button>
+    </AppHero> 
+   -->
+    <!-- step 1 end -->
+    <AppHero>
+      <template v-slot:footer>
+        <h5>Footer Area Content</h5>
+      </template>
+      <h4>Body Area Content</h4>
+      <button>Click Me</button>
+      <template v-slot:header>
+        <h3>Header Area Content</h3>
+      </template>
+      
+    </AppHero>
+  </div>
+</template>
+ 
+<script>
+import AppHero from "./components/hero.vue";
+  export default {
+    data(){
+      return {
+        title : "Welcome to VUE Training",
+      }
+    },
+    components: { AppHero }
+  }
+</script>
+ 
+<style>
+#app {
+  font-family: sans-serif;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
+</style>
+
+....................................................
+
+hero.vue4
+
+<template>
+    <div>
+<!--       
+    <h2>Hero Component</h2> -->
+      <!-- default use
+        <slot></slot> 
+      -->
+      <!-- while using named slots you can use one default slot without a name -->
+      <slot name="header">
+      </slot>
+      <hr>
+      <slot></slot>
+      <hr>
+      <slot name="footer"></slot>
+    </div>
+  </template>
+  
+  <script>
+    export default {
+     name : "AppHero",
+      data(){
+        return {
+          title : "Welcome to VUE Training",
+        }
+      },
+      components: { }
+    }
+  </script>
+  
+  <style>
+  #app {
+    font-family: sans-serif;
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 60px;
+  }
+  </style>
+
+  ----------------------------------------------------------------------
+
+  
+
+
+
